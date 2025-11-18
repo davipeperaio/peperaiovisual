@@ -30,12 +30,14 @@ export default function AppWindow({ app, onClose, children }: Props) {
               layoutId={`app-${app.id}`}
               className="launcher-window"
               drag="y"
-              dragElastic={0.2}
-              dragMomentum={true}
+              dragDirectionLock={true}
+              dragConstraints={{ top: 0 }}
+              dragElastic={{ top: 0, bottom: 0.5 }}
+              dragMomentum={false}
               onDragEnd={(e, info) => {
-                const threshold = 140; // px
-                const velocityThreshold = 1200; // px/s
-                if (Math.abs(info.offset.y) > threshold || Math.abs(info.velocity.y) > velocityThreshold) {
+                const threshold = 180; // px
+                const velocityThreshold = 1400; // px/s
+                if (info.offset.y > threshold || info.velocity.y > velocityThreshold) {
                   onClose();
                 }
               }}

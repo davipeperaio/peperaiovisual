@@ -36,18 +36,18 @@ export default function DashboardLauncher() {
   const [activeApp, setActiveApp] = useState<LauncherApp | null>(null);
 
   const apps = useMemo<any[]>(() => [
-    { id: 'lancamentos', label: 'Lançamentos', gradient: 'linear-gradient(135deg,#00C853,#00E676)' , route: '/caixa', glyph: <AttachMoneyIcon htmlColor="#fff" sx={{ fontSize: 40 }} /> },
-    { id: 'calendario', label: 'Calendário', gradient: 'linear-gradient(135deg,#3F51B5,#00BCD4)' , route: '/calendario', glyph: <CalendarMonthIcon htmlColor="#fff" sx={{ fontSize: 40 }} /> },
-    { id: 'propostas', label: 'Propostas', gradient: 'linear-gradient(135deg,#FF6F00,#FFA000)' , route: '/propostas', glyph: <DescriptionIcon htmlColor="#fff" sx={{ fontSize: 40 }} /> },
-    { id: 'obras', label: 'Obras', gradient: 'linear-gradient(135deg,#8E24AA,#D81B60)' , route: '/obras-hub', glyph: <ConstructionIcon htmlColor="#fff" sx={{ fontSize: 40 }} /> },
-    { id: 'cards', label: 'Cards de Obra', gradient: 'linear-gradient(135deg,#7CB342,#C0CA33)', route: '/cards-de-obra', glyph: <AppsIcon htmlColor="#fff" sx={{ fontSize: 40 }} /> },
-    { id: 'minhas-obras', label: 'Minhas Obras', gradient: 'linear-gradient(135deg,#0097A7,#26C6DA)', route: '/minhas-obras', glyph: <ContentPasteIcon htmlColor="#fff" sx={{ fontSize: 40 }} /> },
-    { id: 'receber', label: 'A Receber', gradient: 'linear-gradient(135deg,#00B8D4,#00E5FF)' , route: '/receber', glyph: <DownloadIcon htmlColor="#fff" sx={{ fontSize: 40 }} /> },
-    { id: 'dividas', label: 'Dívidas', gradient: 'linear-gradient(135deg,#D32F2F,#FF5252)' , route: '/dividas', glyph: <WarningAmberIcon htmlColor="#fff" sx={{ fontSize: 40 }} /> },
-    { id: 'funcionarios', label: 'Funcionários', gradient: 'linear-gradient(135deg,#5E35B1,#7E57C2)' , route: '/funcionarios', glyph: <PeopleOutlineIcon htmlColor="#fff" sx={{ fontSize: 40 }} /> },
-    { id: 'conta', label: 'Minha Conta', gradient: 'linear-gradient(135deg,#546E7A,#455A64)' , route: '/minha-conta', glyph: <PersonIcon htmlColor="#fff" sx={{ fontSize: 40 }} /> },
-    { id: 'financeiro', label: 'Financeiro', gradient: 'linear-gradient(135deg,#1565C0,#42A5F5)', route: '/financeiro-hub', glyph: <QueryStatsIcon htmlColor="#fff" sx={{ fontSize: 40 }} /> },
-    { id: 'obras-hub', label: 'Obras Hub', gradient: 'linear-gradient(135deg,#6A1B9A,#AB47BC)', route: '/obras-hub', glyph: <ExploreIcon htmlColor="#fff" sx={{ fontSize: 40 }} /> },
+    { id: 'lancamentos', label: 'Lançamentos', gradient: 'linear-gradient(135deg,#00C853,#00E676)' , route: '/caixa', glyph: <AttachMoneyIcon htmlColor="#fff" sx={{ fontSize: 48 }} /> },
+    { id: 'calendario', label: 'Calendário', gradient: 'linear-gradient(135deg,#3F51B5,#00BCD4)' , route: '/calendario', glyph: <CalendarMonthIcon htmlColor="#fff" sx={{ fontSize: 48 }} /> },
+    { id: 'propostas', label: 'Propostas', gradient: 'linear-gradient(135deg,#FF6F00,#FFA000)' , route: '/propostas', glyph: <DescriptionIcon htmlColor="#fff" sx={{ fontSize: 48 }} /> },
+    { id: 'obras', label: 'Obras', gradient: 'linear-gradient(135deg,#8E24AA,#D81B60)' , route: '/obras-hub', glyph: <ConstructionIcon htmlColor="#fff" sx={{ fontSize: 48 }} /> },
+    { id: 'cards', label: 'Cards de Obra', gradient: 'linear-gradient(135deg,#7CB342,#C0CA33)', route: '/cards-de-obra', glyph: <AppsIcon htmlColor="#fff" sx={{ fontSize: 48 }} /> },
+    { id: 'minhas-obras', label: 'Minhas Obras', gradient: 'linear-gradient(135deg,#0097A7,#26C6DA)', route: '/minhas-obras', glyph: <ContentPasteIcon htmlColor="#fff" sx={{ fontSize: 48 }} /> },
+    { id: 'receber', label: 'A Receber', gradient: 'linear-gradient(135deg,#00B8D4,#00E5FF)' , route: '/receber', glyph: <DownloadIcon htmlColor="#fff" sx={{ fontSize: 48 }} /> },
+    { id: 'dividas', label: 'Dívidas', gradient: 'linear-gradient(135deg,#D32F2F,#FF5252)' , route: '/dividas', glyph: <WarningAmberIcon htmlColor="#fff" sx={{ fontSize: 48 }} /> },
+    { id: 'funcionarios', label: 'Funcionários', gradient: 'linear-gradient(135deg,#5E35B1,#7E57C2)' , route: '/funcionarios', glyph: <PeopleOutlineIcon htmlColor="#fff" sx={{ fontSize: 48 }} /> },
+    { id: 'conta', label: 'Minha Conta', gradient: 'linear-gradient(135deg,#546E7A,#455A64)' , route: '/minha-conta', glyph: <PersonIcon htmlColor="#fff" sx={{ fontSize: 48 }} /> },
+    { id: 'financeiro', label: 'Financeiro', gradient: 'linear-gradient(135deg,#1565C0,#42A5F5)', route: '/financeiro-hub', glyph: <QueryStatsIcon htmlColor="#fff" sx={{ fontSize: 48 }} /> },
+    { id: 'obras-hub', label: 'Obras Hub', gradient: 'linear-gradient(135deg,#6A1B9A,#AB47BC)', route: '/obras-hub', glyph: <ExploreIcon htmlColor="#fff" sx={{ fontSize: 48 }} /> },
   ], []);
 
   const openApp = (app: LauncherApp) => setActiveApp(app);
