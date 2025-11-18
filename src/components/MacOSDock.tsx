@@ -93,26 +93,33 @@ const DockItem = ({ item, index, mouseX, isActive, onClick, isDark = false }: Do
           className="relative w-full h-full rounded-2xl overflow-hidden flex items-center justify-center"
           style={{
             background: isActive 
-              ? 'linear-gradient(135deg, rgba(99, 102, 241, 0.95) 0%, rgba(79, 70, 229, 0.95) 50%, rgba(67, 56, 202, 0.95) 100%)'
+              ? 'linear-gradient(135deg, rgba(99, 102, 241, 0.95) 0%, rgba(79, 70, 229, 0.95) 100%)'
               : isDark
-                ? 'rgba(30, 41, 59, 0.7)'
-                : 'rgba(255, 255, 255, 0.85)',
+                ? 'rgba(60, 60, 75, 0.6)'
+                : 'rgba(255, 255, 255, 0.75)',
             boxShadow: isActive
-              ? '0 10px 40px rgba(99, 102, 241, 0.6), 0 0 0 3px rgba(165, 180, 252, 0.3) inset, 0 0 0 1px rgba(255, 255, 255, 0.2) inset'
+              ? '0 8px 32px rgba(99, 102, 241, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
               : isDark
-                ? '0 4px 20px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(148, 163, 184, 0.1) inset'
-                : '0 4px 20px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.6) inset',
-            backdropFilter: 'blur(20px) saturate(180%)',
-            WebkitBackdropFilter: 'blur(20px) saturate(180%)',
-            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                ? '0 4px 16px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08)'
+                : '0 4px 16px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8)',
+            backdropFilter: 'blur(20px) saturate(160%)',
+            WebkitBackdropFilter: 'blur(20px) saturate(160%)',
+            border: `0.5px solid ${
+              isActive
+                ? 'rgba(165, 180, 252, 0.3)'
+                : isDark
+                  ? 'rgba(255, 255, 255, 0.1)'
+                  : 'rgba(0, 0, 0, 0.06)'
+            }`,
+            transition: 'all 0.2s ease',
           }}
           whileHover={{
-            scale: 1.05,
+            scale: 1.02,
             boxShadow: isActive
-              ? '0 12px 48px rgba(99, 102, 241, 0.7), 0 0 0 3px rgba(165, 180, 252, 0.4) inset, 0 0 0 1px rgba(255, 255, 255, 0.3) inset'
+              ? '0 10px 40px rgba(99, 102, 241, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.25)'
               : isDark
-                ? '0 6px 24px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(148, 163, 184, 0.2) inset'
-                : '0 6px 24px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.8) inset',
+                ? '0 6px 20px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.12)'
+                : '0 6px 20px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.9)',
           }}
         >
           <div
@@ -122,7 +129,7 @@ const DockItem = ({ item, index, mouseX, isActive, onClick, isDark = false }: Do
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              color: isActive ? 'white' : isDark ? '#d1d5db' : '#4b5563',
+              color: isActive ? 'white' : isDark ? '#e5e7eb' : '#6b7280',
             }}
           >
             <div style={{ width: '55%', height: '55%' }}>
@@ -137,11 +144,11 @@ const DockItem = ({ item, index, mouseX, isActive, onClick, isDark = false }: Do
             layoutId="activeIndicator"
             className="absolute -bottom-1 left-1/2 -translate-x-1/2"
             style={{
-              width: 5,
-              height: 5,
+              width: 4,
+              height: 4,
               borderRadius: '50%',
-              background: 'linear-gradient(135deg, rgba(165, 180, 252, 0.95) 0%, rgba(129, 140, 248, 0.95) 100%)',
-              boxShadow: '0 0 12px rgba(129, 140, 248, 0.9), 0 0 24px rgba(99, 102, 241, 0.6)',
+              background: 'rgba(255, 255, 255, 0.9)',
+              boxShadow: '0 0 8px rgba(255, 255, 255, 0.6)',
             }}
             transition={{
               type: 'spring',
@@ -286,21 +293,21 @@ export default function MacOSDock() {
               display: 'flex',
               alignItems: 'flex-end',
               gap: window.innerWidth < 640 ? 12 : 16,
-              padding: window.innerWidth < 640 ? '14px 18px' : '18px 26px',
-              borderRadius: 40,
+              padding: window.innerWidth < 640 ? '14px 18px' : '16px 24px',
+              borderRadius: window.innerWidth < 640 ? 28 : 32,
               background: isDark
-                ? 'linear-gradient(135deg, rgba(15, 23, 42, 0.7) 0%, rgba(30, 41, 59, 0.7) 100%)'
-                : 'linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(248, 250, 252, 0.7) 100%)',
-              backdropFilter: 'blur(40px) saturate(200%)',
-              WebkitBackdropFilter: 'blur(40px) saturate(200%)',
-              border: `2px solid ${
+                ? 'linear-gradient(135deg, rgba(30, 30, 40, 0.85) 0%, rgba(20, 20, 30, 0.85) 100%)'
+                : 'linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(250, 250, 252, 0.8) 100%)',
+              backdropFilter: 'blur(40px) saturate(180%)',
+              WebkitBackdropFilter: 'blur(40px) saturate(180%)',
+              border: `0.5px solid ${
                 isDark
-                  ? 'rgba(99, 102, 241, 0.2)'
-                  : 'rgba(99, 102, 241, 0.15)'
+                  ? 'rgba(255, 255, 255, 0.15)'
+                  : 'rgba(0, 0, 0, 0.08)'
               }`,
               boxShadow: isDark
-                ? '0 24px 64px rgba(0, 0, 0, 0.7), 0 10px 40px rgba(99, 102, 241, 0.15), 0 0 0 1px rgba(165, 180, 252, 0.1) inset'
-                : '0 24px 64px rgba(0, 0, 0, 0.12), 0 10px 40px rgba(99, 102, 241, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.9) inset',
+                ? '0 20px 60px rgba(0, 0, 0, 0.8), 0 10px 30px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
+                : '0 20px 60px rgba(0, 0, 0, 0.15), 0 10px 30px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9)',
             }}
           >
             {tabs.map((tab, index) => (

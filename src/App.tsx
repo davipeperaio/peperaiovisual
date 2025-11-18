@@ -3,7 +3,7 @@ import { AuthProvider } from './context/AuthContext';
 import { PermissaoProvider } from './context/PermissaoContext';
 import LoginPage from './pages/LoginPage';
 import Dashboard from './pages/Dashboard';
-import DashboardLauncher from './pages/DashboardLauncher';
+import IOSHomePage from './pages/IOSHomePage';
 import DashboardSelector from './pages/DashboardSelector';
 import FinanceiroPessoal from './pages/FinanceiroPessoal';
 import DividasPessoais from './pages/DividasPessoais';
@@ -56,8 +56,8 @@ export default function App() {
               
               {/* Rotas com MainLayout (Bottom Tab Bar) */}
               <Route element={<MainLayout><Outlet /></MainLayout>}>
-                {/* Dashboard Principal (novo launcher) */}
-                <Route path="/dashboard" element={<DashboardLauncher />} />
+                {/* Dashboard iOS Home Screen */}
+                <Route path="/dashboard" element={<IOSHomePage />} />
                 {/* Dashboard antigo ainda acessível */}
                 <Route path="/dashboard-legacy" element={<Dashboard />} />
                 

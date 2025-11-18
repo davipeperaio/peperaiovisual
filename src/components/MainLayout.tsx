@@ -111,7 +111,9 @@ const MainLayout = ({ children }: MainLayoutProps) => {
           </motion.div>
         </AnimatePresence>
       </main>
-      <MacOSDock />
+      <div style={{ position: 'fixed', bottom: 0, left: 0, right: 0, zIndex: 100 }}>
+        <MacOSDock />
+      </div>
       {/* Dock antigo removido para o novo launcher estilo iOS */}
       <NotificationDialog />
     </div>
