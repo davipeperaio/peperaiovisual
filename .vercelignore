@@ -1,0 +1,15 @@
+node_modules
+.git
+.env
+build
+dist
+functions
+backend-ml
+database
+docs
+src
+public
+*.log
+*.lock
+.vscode
+.idea
